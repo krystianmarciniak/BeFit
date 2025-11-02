@@ -1,0 +1,8 @@
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.csproj.AssemblyReference.cache
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.AssemblyInfoInputs.cache
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.AssemblyInfo.cs
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.csproj.CoreCompileInputs.cache
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.RazorAssemblyInfo.cache
+C:\Users\kryst\Documents\53 Pro zaaw\BeFit\obj\Debug\net8.0\BeFit.RazorAssemblyInfo.cs

@@ -1,0 +1,37 @@
+@model IEnumerable<BeFit.Models.StatsVm>
+@{
+    ViewData["Title"] = "Statystyki (ostatnie 28 dni)";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+@if (!Model.Any())
+{
+    <p>Brak danych w wybranym okresie.</p>
+}
+else
+{
+    <table class="table table-striped table-sm">
+        <thead>
+        <tr>
+            <th>Typ ćwiczenia</th>
+            <th class="text-end">Sesje</th>
+            <th class="text-end">Serie</th>
+            <th class="text-end">Powtórzenia</th>
+            <th class="text-end">Ciężar łączny</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.ExerciseTypeName</td>
+                <td class="text-end">@r.SessionsCount</td>
+                <td class="text-end">@r.TotalSets</td>
+                <td class="text-end">@r.TotalReps</td>
+                <td class="text-end">@r.TotalWeight.ToString("N0")</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
