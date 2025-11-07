@@ -1,0 +1,54 @@
+@{
+    ViewData["Title"] = "Strona główna";
+}
+
+<div class="py-4">
+    <h1 class="mb-3">Witaj w BeFit</h1>
+    <p class="text-muted mb-4">Szybka nawigacja po najważniejszych sekcjach.</p>
+
+    <div class="row g-3">
+        <div class="col-sm-6 col-lg-3">
+            <a class="text-decoration-none" asp-controller="ExerciseTypes" asp-action="Index">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-list-task me-1"></i>Rodzaje ćwiczeń</h5>
+                        <p class="card-text text-muted">Przeglądaj i zarządzaj katalogiem ćwiczeń.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <a class="text-decoration-none" asp-controller="TrainingSessions" asp-action="Index">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Sesje</h5>
+                        <p class="card-text text-muted">Twoje treningi z datami i czasem trwania.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <a class="text-decoration-none" asp-controller="PerformedExercise" asp-action="Index">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">Wykonane ćwiczenia</h5>
+                        <p class="card-text text-muted">Serie, powtórzenia, ciężary – szczegóły.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-sm-6 col-lg-3">
+            <a class="text-decoration-none" asp-controller="Statistics" asp-action="Index">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><i class="bi bi-graph-up-arrow me-1"></i>Statystyki</h5>
+                        <p class="card-text text-muted">Podsumowania i progres (7/30 dni).</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

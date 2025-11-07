@@ -1,0 +1,26 @@
+@model BeFit.Models.PerformedExercise
+@{
+    ViewData["Title"] = "Szczegóły ćwiczenia";
+}
+<h1>@ViewData["Title"]</h1>
+
+<dl class="row">
+  <dt class="col-sm-3">Sesja</dt>
+  <dd class="col-sm-9">@Model.TrainingSession?.Title</dd>
+
+  <dt class="col-sm-3">Typ ćwiczenia</dt>
+  <dd class="col-sm-9">@Model.ExerciseType?.Name</dd>
+
+  <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Sets)</dt>
+  <dd class="col-sm-9">@Model.Sets</dd>
+
+  <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Reps)</dt>
+  <dd class="col-sm-9">@Model.Reps</dd>
+
+  <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Weight)</dt>
+  <dd class="col-sm-9">@Model.Weight</dd>
+</dl>
+
+<p>
+  <a class="btn btn-secondary" asp-action="Index">Powrót</a>
+</p>

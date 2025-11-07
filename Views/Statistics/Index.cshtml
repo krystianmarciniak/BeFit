@@ -1,0 +1,97 @@
+@model BeFit.ViewModels.StatisticsVm
+@{
+    ViewData["Title"] = "Statystyki";
+}
+
+<h2 class="mb-4">Twoje statystyki</h2>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card shadow-sm"><div class="card-body">
+            <div class="h6 text-muted">Sesje łącznie</div>
+            <div class="display-6">@Model.SessionsCount</div>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm"><div class="card-body">
+            <div class="h6 text-muted">Wykonane ćwiczenia</div>
+            <div class="display-6">@Model.ExercisesCount</div>
+        </div></div>
+    </div>
+    <div class="col-md-4">
+        <div class="card shadow-sm"><div class="card-body">
+            <div class="h6 text-muted">Wolumen (kg)</div>
+            <div class="display-6">@Model.TotalVolume.ToString("N0")</div>
+            <div class="small text-muted">∑ (serie × powt. × kg)</div>
+        </div></div>
+    </div>
+</div>
+
+<div class="row g-4">
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h5 class="card-title mb-0">Ostatnie 5 sesji</h5>
+                    <span class="badge bg-secondary">
+                        7 dni: @Model.Last7DaysSessions • 30 dni: @Model.Last30DaysSessions
+                    </span>
+                </div>
+
+                @if (Model.RecentSessions.Count == 0)
+                {
+                    <p class="text-muted mb-0">Brak sesji.</p>
+                }
+                else
+                {
+                    <ul class="list-group list-group-flush">
+                        @foreach (var s in Model.RecentSessions)
+                        {
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>@s.Title</span>
+                                <span class="text-muted">@s.StartTime.ToString("yyyy-MM-dd HH:mm")</span>
+                            </li>
+                        }
+                    </ul>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="card shadow-sm h-100">
+            <div class="card-body">
+                <h5 class="card-title">Top 5 ćwiczeń (wg powtórzeń)</h5>
+
+                @if (Model.TopExercises.Count == 0)
+                {
+                    <p class="text-muted mb-0">Brak danych.</p>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="table table-sm align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Rodzaj ćwiczenia</th>
+                                    <th class="text-end">Powtórzenia (∑)</th>
+                                    <th class="text-end">Wolumen (kg)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var t in Model.TopExercises)
+                                {
+                                    <tr>
+                                        <td>@t.ExerciseTypeName</td>
+                                        <td class="text-end">@t.TotalReps</td>
+                                        <td class="text-end">@t.TotalVolume.ToString("N0")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

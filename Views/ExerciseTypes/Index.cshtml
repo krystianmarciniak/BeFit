@@ -1,0 +1,63 @@
+@model IEnumerable<BeFit.Models.ExerciseType>
+@{
+    ViewData["Title"] = "Rodzaje ćwiczeń";
+    var q = (string?)ViewBag.Query;
+}
+
+<div class="d-flex align-items-center justify-content-between mb-4">
+    <h1 class="display-5 fw-bold">@ViewData["Title"]</h1>
+    <a class="btn btn-primary" asp-action="Create">+ Dodaj</a>
+</div>
+
+@if (TempData["ok"] is string ok)
+{
+    <div class="alert alert-success">@ok</div>
+}
+
+<form method="get" class="row g-2 mb-3" role="search">
+    <div class="col-auto">
+        <input name="q" value="@q" class="form-control" placeholder="Szukaj po nazwie..." />
+    </div>
+    <div class="col-auto">
+        <button class="btn btn-outline-secondary">Filtruj</button>
+    </div>
+    @if (!string.IsNullOrEmpty(q))
+    {
+        <div class="col-auto">
+            <a asp-action="Index" class="btn btn-link">Wyczyść</a>
+        </div>
+    }
+</form>
+
+@if (!Model.Any())
+{
+    <p>Brak rekordów.</p>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Opis</th>
+                    <th style="width:180px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Name</td>
+                    <td class="text-muted">@x.Description</td>
+                    <td class="text-end">
+                        <a asp-action="Details" asp-route-id="@x.Id" class="btn btn-sm btn-outline-secondary">Szczegóły</a>
+                        <a asp-action="Edit" asp-route-id="@x.Id" class="btn btn-sm btn-primary">Edytuj</a>
+                        <a asp-action="Delete" asp-route-id="@x.Id" class="btn btn-sm btn-danger">Usuń</a>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,19 @@
+@using Microsoft.AspNetCore.Identity
+@using BeFit.Data
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-controller="Account"
+          asp-action="Logout"
+          asp-route-returnUrl="@Context.Request.Path"
+          method="post">
+        <button type="submit" class="btn btn-link text-white">Wyloguj</button>
+    </form>
+}
+else
+{
+    <a href="/Identity/Account/Login">Zaloguj</a>
+    <a href="/Identity/Account/Register">Rejestracja</a>
+}

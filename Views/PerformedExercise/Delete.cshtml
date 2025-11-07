@@ -1,0 +1,28 @@
+@model BeFit.Models.PerformedExercise
+@{
+    ViewData["Title"] = "Usuń ćwiczenie";
+}
+<h1>@ViewData["Title"]</h1>
+
+<dl class="row">
+  <dt class="col-sm-3">Sesja</dt>
+  <dd class="col-sm-9">@Model.TrainingSession?.Title</dd>
+
+  <dt class="col-sm-3">Typ ćwiczenia</dt>
+  <dd class="col-sm-9">@Model.ExerciseType?.Name</dd>
+
+  <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Sets)</dt>
+  <dd class="col-sm-9">@Model.Sets</dd>
+
+  <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Reps)</dt>
+  <dd class="col-sm-9">@Model.Reps</dd>
+
+  <dt class="col-sm-3">@Html.DisplayNameFor(m => m.Weight)</dt>
+  <dd class="col-sm-9">@Model.Weight</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+  <input type="hidden" asp-for="Id" />
+  <button type="submit" class="btn btn-danger">Usuń</button>
+  <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+</form>

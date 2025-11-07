@@ -1,0 +1,45 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BeFit.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BeFit.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BeFit.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BeFit.props",
+      "PackagePath": "build\\BeFit.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BeFit.props",
+      "PackagePath": "buildMultiTargeting\\BeFit.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BeFit.props",
+      "PackagePath": "buildTransitive\\BeFit.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

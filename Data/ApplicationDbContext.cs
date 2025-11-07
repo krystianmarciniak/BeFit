@@ -4,30 +4,28 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BeFit.Data;
 
-public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : IdentityDbContext<ApplicationUser>(options)
+public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
-  public DbSet<ExerciseType> ExerciseTypes => Set<ExerciseType>();
-  public DbSet<TrainingSession> TrainingSessions => Set<TrainingSession>();
-  public DbSet<PerformedExercise> PerformedExercises => Set<PerformedExercise>();
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+    public DbSet<BeFit.Models.ExerciseType> ExerciseTypes { get; set; } = default!;
 
-   protected override void OnModelCreating(ModelBuilder modelBuilder)
-   {
-       base.OnModelCreating(modelBuilder);
+    public DbSet<TrainingSession> TrainingSessions => Set<TrainingSession>();
+    public DbSet<PerformedExercise> PerformedExercises => Set<PerformedExercise>();
 
-       modelBuilder.Entity<PerformedExercise>()
-           .HasOne(pe => pe.TrainingSession)
-           .WithMany(ts => ts.PerformedExercises)
-           .HasForeignKey(pe => pe.TrainingSessionId)
-           .OnDelete(DeleteBehavior.Cascade);
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
 
-       modelBuilder.Entity<PerformedExercise>()
-           .HasOne(pe => pe.ExerciseType)
-           .WithMany(et => et.PerformedExercises)
-           .HasForeignKey(pe => pe.ExerciseTypeId)
-           .OnDelete(DeleteBehavior.Restrict);
-   }
+        modelBuilder.Entity<PerformedExercise>()
+            .HasOne(pe => pe.TrainingSession)
+            .WithMany(ts => ts.PerformedExercises)
+            .HasForeignKey(pe => pe.TrainingSessionId)
+            .OnDelete(DeleteBehavior.Cascade);
 
-
-
-
+        modelBuilder.Entity<PerformedExercise>()
+            .HasOne(pe => pe.ExerciseType)
+            .WithMany(et => et.PerformedExercises)
+            .HasForeignKey(pe => pe.ExerciseTypeId)
+            .OnDelete(DeleteBehavior.Restrict);
+    }
 }

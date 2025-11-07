@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj": {}
+    "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj": {}
   },
   "projects": {
-    "c:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj": {
+    "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj",
+        "projectUniqueName": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj",
         "projectName": "BeFit",
-        "projectPath": "c:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj",
+        "projectPath": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj",
         "packagesPath": "C:\\Users\\kryst\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\",
+        "outputPath": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\kryst\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -53,9 +53,9 @@
               "target": "Package",
               "version": "[8.0.21, )"
             },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[8.0.21, )"
+              "version": "[8.0.18, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",

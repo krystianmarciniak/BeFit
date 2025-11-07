@@ -23,8 +23,8 @@
     <div class="col-md-4">
         <StatusMessage Message="@Message" />
         <EditForm Model="Input" OnValidSubmit="RegisterUser">
-    <DataAnnotationsValidator />
-    <ValidationSummary class="text-danger" />
+        <DataAnnotationsValidator />
+        <ValidationSummary class="text-danger" />
 
     <div class="form-floating mb-3">
         <InputText @bind-Value="Input.Email" class="form-control" autocomplete="username" />

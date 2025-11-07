@@ -1,0 +1,60 @@
+@model BeFit.ViewModels.PerformedExerciseIndexVm
+@{
+    ViewData["Title"] = "Wykonane ćwiczenia";
+}
+
+<h2 class="mb-3">Wykonane ćwiczenia</h2>
+
+<div class="table-responsive">
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>Sesja</th>
+            <th>Ćwiczenie</th>
+            <th class="text-end">Serie</th>
+            <th class="text-end">Powtórzenia</th>
+            <th class="text-end">Ciężar (kg)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var x in Model.Items)
+    {
+        <tr>
+            <td>@x.TrainingSession?.Title</td>
+            <td>@x.ExerciseType?.Name</td>
+            <td class="text-end">@x.Sets</td>
+            <td class="text-end">@x.Reps</td>
+            <td class="text-end">@((x.Weight ?? 0).ToString("N1"))</td>
+            <td class="text-end">
+                <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@x.Id">Szczegóły</a>
+                <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@x.Id">Edytuj</a>
+                <a class="btn btn-sm btn-outline-danger" asp-action="Delete" asp-route-id="@x.Id">Usuń</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+</div>
+
+@if (Model.TotalPages > 1)
+{
+    <nav aria-label="Paginacja">
+        <ul class="pagination">
+            <li class="page-item @(Model.Page == 1 ? "disabled" : "")">
+                <a class="page-link" asp-action="Index" asp-route-page="@(Model.Page - 1)" asp-route-pageSize="@Model.PageSize">Poprzednia</a>
+            </li>
+
+            @for (int p = 1; p <= Model.TotalPages; p++)
+            {
+                <li class="page-item @(p == Model.Page ? "active" : "")">
+                    <a class="page-link" asp-action="Index" asp-route-page="@p" asp-route-pageSize="@Model.PageSize">@p</a>
+                </li>
+            }
+
+            <li class="page-item @(Model.Page == Model.TotalPages ? "disabled" : "")">
+                <a class="page-link" asp-action="Index" asp-route-page="@(Model.Page + 1)" asp-route-pageSize="@Model.PageSize">Następna</a>
+            </li>
+        </ul>
+    </nav>
+}
