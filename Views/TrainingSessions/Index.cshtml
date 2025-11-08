@@ -1,6 +1,41 @@
+@model IEnumerable<BeFit.Models.TrainingSession>
 @{
     ViewData["Title"] = "Sesje treningowe";
 }
-<h2>Sesje treningowe</h2>
+<h1 class="display-5 fw-bold mb-3">@ViewData["Title"]</h1>
 
-<p>Tutaj pojawi się lista sesji po zalogowaniu użytkownika.</p>
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-primary">+ Dodaj sesję</a>
+</div>
+
+@if (!Model.Any())
+{
+    <p>Brak sesji. Dodaj pierwszą, aby zacząć rejestrować treningi.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Data</th>
+            <th>Czas (min)</th>
+            <th>Notatki</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var s in Model)
+        {
+            <tr>
+                <td>@s.Date.ToString("yyyy-MM-dd")</td>
+                <td>@s.DurationMinutes</td>
+                <td>@s.Notes</td>
+                <td class="text-end">
+                    <a asp-action="Edit" asp-route-id="@s.Id" class="btn btn-sm btn-outline-secondary">Edytuj</a>
+                    <a asp-action="Delete" asp-route-id="@s.Id" class="btn btn-sm btn-outline-danger">Usuń</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}

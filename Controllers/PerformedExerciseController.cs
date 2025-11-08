@@ -30,6 +30,7 @@ namespace BeFit.Controllers
 
       var uid = _users.GetUserId(User);
 
+      // bazowe zapytanie: tylko rekordy użytkownika i tylko te z przypisaną sesją
       var baseQ = _db.PerformedExercises
           .AsNoTracking()
           .Include(x => x.ExerciseType)
@@ -38,8 +39,11 @@ namespace BeFit.Controllers
 
       var total = await baseQ.CountAsync();
 
+      // Sortowanie:
+      // StartTime jest nullable, SessionDate nie — używamy koalescencji,
+      // co tłumaczy się w SQLite na COALESCE i działa w SQL (nie po stronie klienta).
       var items = await baseQ
-          .OrderByDescending(x => x.TrainingSession!.StartTime)
+          .OrderByDescending(x => (x.TrainingSession!.StartTime ?? x.TrainingSession!.SessionDate))
           .ThenBy(x => x.ExerciseType!.Name)
           .Skip((page - 1) * pageSize)
           .Take(pageSize)
@@ -55,7 +59,6 @@ namespace BeFit.Controllers
 
       return View(vm);
     }
-
 
     // GET: /PerformedExercise/Details/5
     public async Task<IActionResult> Details(int id)
@@ -99,7 +102,7 @@ namespace BeFit.Controllers
 
       if (model.Sets <= 0) ModelState.AddModelError(nameof(model.Sets), "Liczba serii musi być > 0.");
       if (model.Reps <= 0) ModelState.AddModelError(nameof(model.Reps), "Liczba powtórzeń musi być > 0.");
-      if (model.Weight < 0) ModelState.AddModelError(nameof(model.Weight), "Ciężar nie może być ujemny.");
+      if (model.WeightKg < 0) ModelState.AddModelError(nameof(model.WeightKg), "Ciężar nie może być ujemny.");
 
       if (!ModelState.IsValid)
       {
@@ -159,7 +162,7 @@ namespace BeFit.Controllers
 
       if (model.Sets <= 0) ModelState.AddModelError(nameof(model.Sets), "Liczba serii musi być > 0.");
       if (model.Reps <= 0) ModelState.AddModelError(nameof(model.Reps), "Liczba powtórzeń musi być > 0.");
-      if (model.Weight < 0) ModelState.AddModelError(nameof(model.Weight), "Ciężar nie może być ujemny.");
+      if (model.WeightKg < 0) ModelState.AddModelError(nameof(model.WeightKg), "Ciężar nie może być ujemny.");
 
       if (!ModelState.IsValid)
       {
@@ -171,7 +174,7 @@ namespace BeFit.Controllers
       entity.TrainingSessionId = model.TrainingSessionId;
       entity.Sets = model.Sets;
       entity.Reps = model.Reps;
-      entity.Weight = model.Weight;
+      entity.WeightKg = model.WeightKg;
 
       await _db.SaveChangesAsync();
       TempData["Msg"] = "Zaktualizowano ćwiczenie.";

@@ -39,7 +39,7 @@ namespace BeFit.Controllers
         SessionsCount = await sessionsQ.CountAsync(),
         ExercisesCount = await exercisesQ.CountAsync(),
         TotalVolume = await exercisesQ
-                                  .Select(x => (double)(x.Sets * x.Reps) * (x.Weight ?? 0))
+                                  .Select(x => (double)(x.Sets * x.Reps) * (x.WeightKg ?? 0))
                                   .SumAsync(),
         Last7DaysSessions = await sessionsQ.CountAsync(s => s.StartTime >= now.AddDays(-7)),
         Last30DaysSessions = await sessionsQ.CountAsync(s => s.StartTime >= now.AddDays(-30)),
@@ -53,7 +53,7 @@ namespace BeFit.Controllers
           {
             Id = s.Id,
             Title = s.Title,
-            StartTime = s.StartTime
+            StartTime = (s.StartTime ?? s.SessionDate).Date
           })
           .ToListAsync();
 
@@ -64,7 +64,7 @@ namespace BeFit.Controllers
           {
             ExerciseTypeName = g.Key,
             TotalReps = g.Sum(x => x.Sets * x.Reps),
-            TotalVolume = g.Sum(x => (x.Weight ?? 0) * x.Sets * x.Reps)
+            TotalVolume = g.Sum(x => (x.WeightKg ?? 0) * x.Sets * x.Reps)
           })
           .OrderByDescending(x => x.TotalReps)
           .Take(5)

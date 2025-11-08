@@ -1,0 +1,46 @@
+@model BeFit.Models.TrainingSession
+@{
+    ViewData["Title"] = "Nowa sesja";
+}
+
+<h1>Nowa sesja</h1>
+
+<form asp-action="Create" method="post">
+    @Html.AntiForgeryToken()
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label asp-for="Title" class="form-label"></label>
+            <input asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="SessionDate" class="form-label">Data</label>
+            <input asp-for="SessionDate" type="datetime-local" class="form-control" />
+            <span asp-validation-for="SessionDate" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="DurationMinutes" class="form-label"></label>
+            <input asp-for="DurationMinutes" class="form-control" />
+            <span asp-validation-for="DurationMinutes" class="text-danger"></span>
+        </div>
+
+        <div class="col-12">
+            <label asp-for="Notes" class="form-label"></label>
+            <input asp-for="Notes" class="form-control" />
+            <span asp-validation-for="Notes" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Zapisz</button>
+        <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

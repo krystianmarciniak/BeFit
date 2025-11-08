@@ -1,80 +1,111 @@
 using System.Linq;
 using System.Threading.Tasks;
-using BeFit.Data;                          // ApplicationDbContext, ApplicationUser
-using BeFit.Models;                        // TrainingSession (jeśli masz gdzie indziej – dostosuj przestrzeń nazw)
-using Microsoft.AspNetCore.Authorization;  // [Authorize]
-using Microsoft.AspNetCore.Identity;       // UserManager<T>
-using Microsoft.AspNetCore.Mvc;            // Controller
-using Microsoft.EntityFrameworkCore;       // EF Core
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using BeFit.Data;
+using BeFit.Models;
 
 namespace BeFit.Controllers
 {
   [Authorize]
   public class TrainingSessionsController : Controller
   {
-    private readonly ApplicationDbContext _db;
-    private readonly UserManager<ApplicationUser> _users;
+    private readonly ApplicationDbContext _context;
+    private readonly UserManager<ApplicationUser> _userManager;
 
-    public TrainingSessionsController(ApplicationDbContext db, UserManager<ApplicationUser> users)
+    public TrainingSessionsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
     {
-      _db = db; _users = users;
+      _context = context;
+      _userManager = userManager;
     }
 
+    // GET: /TrainingSessions
     public async Task<IActionResult> Index()
     {
-      var uid = _users.GetUserId(User);
-      var list = await _db.TrainingSessions
-          .AsNoTracking()
+      var uid = _userManager.GetUserId(User);
+      var data = await _context.TrainingSessions
           .Where(x => x.UserId == uid)
-          .OrderByDescending(x => x.StartTime)
+          .OrderByDescending(x => x.SessionDate)
           .ToListAsync();
-      return View(list);
+
+      return View(data);
     }
 
-    public async Task<IActionResult> Edit(int id)
+    // GET: /TrainingSessions/Create
+    public IActionResult Create() => View();
+
+    // POST: /TrainingSessions/Create
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create(TrainingSession model)
     {
-      var uid = _users.GetUserId(User);
-      var entity = await _db.TrainingSessions.FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
-      if (entity is null) return NotFound();
-      return View(entity);
-    }
+      var uid = _userManager.GetUserId(User);
 
-    [HttpPost, ValidateAntiForgeryToken]
-    public async Task<IActionResult> Edit(int id, TrainingSession model)
-    {
-      var uid = _users.GetUserId(User);
-      if (id != model.Id) return NotFound();
+      // Jeżeli tytuł jest pusty, ustaw domyślny i wyczyść błąd walidacji
+      if (string.IsNullOrWhiteSpace(model.Title))
+      {
+        model.Title = model.SessionDate.ToString("yyyy-MM-dd HH:mm");
+        ModelState.Remove(nameof(model.Title));
+      }
 
-      var entity = await _db.TrainingSessions.FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
-      if (entity is null) return NotFound();
+      if (!ModelState.IsValid)
+        return View(model);
 
-      entity.Title = model.Title;
-      entity.StartTime = model.StartTime;
-      entity.EndTime = model.EndTime;
-
-      await _db.SaveChangesAsync();
-      TempData["Msg"] = "Zaktualizowano sesję.";
+      model.UserId = uid;
+      _context.TrainingSessions.Add(model);
+      await _context.SaveChangesAsync();
       return RedirectToAction(nameof(Index));
     }
 
-    public async Task<IActionResult> Delete(int id)
+
+    // GET: /TrainingSessions/Edit/5
+    public async Task<IActionResult> Edit(int id)
     {
-      var uid = _users.GetUserId(User);
-      var entity = await _db.TrainingSessions.AsNoTracking().FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
-      if (entity is null) return NotFound();
+      var uid = _userManager.GetUserId(User);
+      var entity = await _context.TrainingSessions.FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
+      if (entity == null) return NotFound();
       return View(entity);
     }
 
+    // POST: /TrainingSessions/Edit/5
+    [HttpPost, ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(int id, TrainingSession model)
+    {
+      var uid = _userManager.GetUserId(User);
+      var entity = await _context.TrainingSessions.FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
+      if (entity == null) return NotFound();
+
+      if (!ModelState.IsValid) return View(model);
+
+      entity.Date = model.Date;
+      entity.DurationMinutes = model.DurationMinutes;
+      entity.Notes = model.Notes;
+
+      await _context.SaveChangesAsync();
+      return RedirectToAction(nameof(Index));
+    }
+
+    // GET: /TrainingSessions/Delete/5
+    public async Task<IActionResult> Delete(int id)
+    {
+      var uid = _userManager.GetUserId(User);
+      var entity = await _context.TrainingSessions.FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
+      if (entity == null) return NotFound();
+      return View(entity);
+    }
+
+    // POST: /TrainingSessions/Delete/5
     [HttpPost, ActionName("Delete"), ValidateAntiForgeryToken]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
-      var uid = _users.GetUserId(User);
-      var entity = await _db.TrainingSessions.FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
-      if (entity is null) return NotFound();
+      var uid = _userManager.GetUserId(User);
+      var entity = await _context.TrainingSessions.FirstOrDefaultAsync(x => x.Id == id && x.UserId == uid);
+      if (entity == null) return NotFound();
 
-      _db.TrainingSessions.Remove(entity);
-      await _db.SaveChangesAsync();
-      TempData["Msg"] = "Usunięto sesję.";
+      _context.TrainingSessions.Remove(entity);
+      await _context.SaveChangesAsync();
       return RedirectToAction(nameof(Index));
     }
   }

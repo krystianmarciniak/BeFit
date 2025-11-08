@@ -3,7 +3,7 @@ namespace BeFit.ViewModels
 {
   public class PerformedExerciseIndexVm
   {
-    public IReadOnlyList<PerformedExercise> Items { get; set; } = Array.Empty<PerformedExercise>();
+    public IEnumerable<BeFit.Models.PerformedExercise> Items { get; set; } = Enumerable.Empty<BeFit.Models.PerformedExercise>();
     public int Page { get; set; }
     public int PageSize { get; set; }
     public int TotalCount { get; set; }

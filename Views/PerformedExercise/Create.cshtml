@@ -2,41 +2,45 @@
 @{
     ViewData["Title"] = "Dodaj ćwiczenie";
 }
-<h1>@ViewData["Title"]</h1>
+<h1 class="display-6 fw-bold mb-4">@ViewData["Title"]</h1>
 
-<form asp-action="Create" method="post">
-  <div class="mb-3">
-    <label class="form-label" asp-for="TrainingSessionId">Sesja</label>
-    <select class="form-select" asp-for="TrainingSessionId" asp-items="ViewBag.TrainingSessionId"></select>
-    <span class="text-danger" asp-validation-for="TrainingSessionId"></span>
-  </div>
+<form asp-action="Create" method="post" class="row gy-3" novalidate>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-  <div class="mb-3">
-    <label class="form-label" asp-for="ExerciseTypeId">Typ ćwiczenia</label>
-    <select class="form-select" asp-for="ExerciseTypeId" asp-items="ViewBag.ExerciseTypeId"></select>
-    <span class="text-danger" asp-validation-for="ExerciseTypeId"></span>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4 mb-3">
-      <label asp-for="Sets" class="form-label"></label>
-      <input asp-for="Sets" class="form-control" />
-      <span class="text-danger" asp-validation-for="Sets"></span>
+    <div class="col-12 col-md-4">
+        <label asp-for="TrainingSessionId" class="form-label"></label>
+        <select asp-for="TrainingSessionId" class="form-select" asp-items="ViewBag.TrainingSessionId"></select>
+        <span asp-validation-for="TrainingSessionId" class="text-danger"></span>
     </div>
-    <div class="col-md-4 mb-3">
-      <label asp-for="Reps" class="form-label"></label>
-      <input asp-for="Reps" class="form-control" />
-      <span class="text-danger" asp-validation-for="Reps"></span>
-    </div>
-    <div class="col-md-4 mb-3">
-      <label asp-for="Weight" class="form-label"></label>
-      <input asp-for="Weight" class="form-control" />
-      <span class="text-danger" asp-validation-for="Weight"></span>
-    </div>
-  </div>
 
-  <button type="submit" class="btn btn-primary">Zapisz</button>
-  <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+    <div class="col-12 col-md-6">
+        <label asp-for="ExerciseTypeId" class="form-label"></label>
+        <select asp-for="ExerciseTypeId" class="form-select" asp-items="ViewBag.ExerciseTypeId"></select>
+        <span asp-validation-for="ExerciseTypeId" class="text-danger"></span>
+    </div>
+
+    <div class="col-12 col-md-3">
+        <label asp-for="Sets" class="form-label"></label>
+        <input asp-for="Sets" class="form-control" />
+        <span asp-validation-for="Sets" class="text-danger"></span>
+    </div>
+
+    <div class="col-12 col-md-3">
+        <label asp-for="Reps" class="form-label"></label>
+        <input asp-for="Reps" class="form-control" />
+        <span asp-validation-for="Reps" class="text-danger"></span>
+    </div>
+
+    <div class="col-12 col-md-3">
+        <label asp-for="WeightKg" class="form-label"></label>
+        <input asp-for="WeightKg" class="form-control" />
+        <span asp-validation-for="WeightKg" class="text-danger"></span>
+    </div>
+
+    <div class="col-12 d-flex gap-2">
+        <button class="btn btn-primary" type="submit">Zapisz</button>
+        <a asp-action="Index" class="btn btn-outline-secondary">Anuluj</a>
+    </div>
 </form>
 
 @section Scripts { <partial name="_ValidationScriptsPartial" /> }

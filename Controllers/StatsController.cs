@@ -40,7 +40,7 @@ namespace BeFit.Controllers
             SessionsCount = g.Select(x => x.TrainingSessionId).Distinct().Count(),
             TotalSets = g.Sum(x => x.Sets),
             TotalReps = g.Sum(x => x.Sets * x.Reps),
-            TotalWeight = g.Sum(x => (x.Weight ?? 0) * x.Sets * x.Reps)
+            TotalWeight = g.Sum(x => (x.WeightKg ?? 0) * x.Sets * x.Reps)
           })
           .OrderByDescending(x => x.TotalReps)
           .ToListAsync();
