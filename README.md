@@ -18,15 +18,13 @@ Zastosowane technologie
 
 
 Funkcjonalności aplikacji
-## Zrzuty ekranu (działająca aplikacja)
 
 Poniżej znajdują się przykładowe widoki aplikacji po uruchomieniu (lokalnie).  
 Zrzuty mają pokazać kompletność funkcji CRUD oraz obecność statystyk użytkownika.
 
 ### Strona startowa (nawigacja)
 ![Witaj w BeFit](screenshots/1_Witaj_w_BeFit.png)
-- **Modele (3 wymagane):** ExerciseType, TrainingSession, PerformedExercise (walidacja + Display).
-
+- **Strona startowa zapewnia dostęp do wszystkich głównych modułów aplikacji.** 
 
 ### Rodzaje ćwiczeń (publiczny podgląd + CRUD dla Admina)
 ![Rodzaje ćwiczeń](screenshots/2_Rodzaje_cwiczen.png)
