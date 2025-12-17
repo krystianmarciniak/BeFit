@@ -1,27 +1,27 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BeFit.bundle.scp.css",
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BeFit.bundle.scp.css",
       "PackagePath": "staticwebassets\\BeFit.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\app.css",
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },
     {
-      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\favicon.png",
+      "Id": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {

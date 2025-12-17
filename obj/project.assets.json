@@ -2871,11 +2871,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj",
+      "projectUniqueName": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\BeFit.csproj",
       "projectName": "BeFit",
-      "projectPath": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\BeFit.csproj",
+      "projectPath": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\BeFit.csproj",
       "packagesPath": "C:\\Users\\kryst\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\",
+      "outputPath": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\kryst\\AppData\\Roaming\\NuGet\\NuGet.Config",

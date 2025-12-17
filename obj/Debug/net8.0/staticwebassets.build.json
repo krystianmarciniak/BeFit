@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "v7uwKzXzKQckeyv5aytSOkPH7AnULdKZ93wYMPaEeTQ=",
+  "Hash": "ivCLe/r+Lsg9BxEmMI1hymrtbsl+MIsCM/yF1iqngL4=",
   "Source": "BeFit",
   "BasePath": "_content/BeFit",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "BeFit\\wwwroot",
       "Source": "BeFit",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\",
       "BasePath": "_content/BeFit",
       "Pattern": "**"
     }
@@ -1157,10 +1157,10 @@
       "OriginalItemSpec": "C:\\Users\\kryst\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.18\\staticwebassets\\V5\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BeFit.styles.css",
+      "Identity": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BeFit.styles.css",
       "SourceId": "BeFit",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/BeFit",
       "RelativePath": "BeFit.styles.css",
       "AssetKind": "All",
@@ -1173,13 +1173,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BeFit.styles.css"
+      "OriginalItemSpec": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BeFit.styles.css"
     },
     {
-      "Identity": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BeFit.bundle.scp.css",
+      "Identity": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BeFit.bundle.scp.css",
       "SourceId": "BeFit",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/BeFit",
       "RelativePath": "BeFit.bundle.scp.css",
       "AssetKind": "All",
@@ -1192,13 +1192,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BeFit.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BeFit.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\app.css",
+      "Identity": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\app.css",
       "SourceId": "BeFit",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\",
       "BasePath": "_content/BeFit",
       "RelativePath": "app.css",
       "AssetKind": "All",
@@ -1214,10 +1214,10 @@
       "OriginalItemSpec": "wwwroot\\app.css"
     },
     {
-      "Identity": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Identity": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css",
       "SourceId": "BeFit",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\",
       "BasePath": "_content/BeFit",
       "RelativePath": "bootstrap/bootstrap.min.css",
       "AssetKind": "All",
@@ -1233,10 +1233,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Identity": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\bootstrap\\bootstrap.min.css.map",
       "SourceId": "BeFit",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\",
       "BasePath": "_content/BeFit",
       "RelativePath": "bootstrap/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1252,10 +1252,10 @@
       "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\css\\site.css",
       "SourceId": "BeFit",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\",
       "BasePath": "_content/BeFit",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1271,10 +1271,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\favicon.png",
+      "Identity": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\favicon.png",
       "SourceId": "BeFit",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pro zaaw\\BeFit\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\kryst\\Documents\\53 Pr zaaw\\BeFit\\wwwroot\\",
       "BasePath": "_content/BeFit",
       "RelativePath": "favicon.png",
       "AssetKind": "All",
