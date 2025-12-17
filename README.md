@@ -24,24 +24,24 @@ Poniżej znajdują się przykładowe widoki aplikacji po uruchomieniu (lokalnie)
 Zrzuty mają pokazać kompletność funkcji CRUD oraz obecność statystyk użytkownika.
 
 ### Strona startowa (nawigacja)
-![Witaj w BeFit](docs/screenshots/1_Witaj_w_BeFit.png)
+![Witaj w BeFit](screenshots/1_Witaj_w_BeFit.png)
 - **Modele (3 wymagane):** ExerciseType, TrainingSession, PerformedExercise (walidacja + Display).
 
 
 ### Rodzaje ćwiczeń (publiczny podgląd + CRUD dla Admina)
-![Rodzaje ćwiczeń](docs/screenshots/2_Rodzaje_cwiczen.png)
+![Rodzaje ćwiczeń](screenshots/2_Rodzaje_cwiczen.png)
 - **Typy ćwiczeń:** Index/Details publiczne, modyfikacje ograniczone do roli Admin.
 
 ### Sesje treningowe (CRUD tylko dla zalogowanego użytkownika)
-![Sesje treningowe](docs/screenshots/3_Sesje_treningowe.png)
+![Sesje treningowe](screenshots/3_Sesje_treningowe.png)
 - **Sesje treningowe:** dostęp po zalogowaniu, rekordy przypisane do użytkownika, brak dostępu do cudzych danych.
 
 ### Wykonane ćwiczenia (CRUD tylko dla zalogowanego użytkownika, listy wyboru)
-![Wykonane ćwiczenia](docs/screenshots/4_Wykonane_cwiczenia.png)
+![Wykonane ćwiczenia](screenshots/4_Wykonane_cwiczenia.png)
 - **Wykonane ćwiczenia:** dostęp po zalogowaniu, wybór typu ćwiczenia i sesji z list (czytelne nazwy), ochrona własności danych.
 
 ### Statystyki (ostatnie 4 tygodnie / podsumowania użytkownika)
-![Twoje statystyki](docs/screenshots/5_Twoje_statystyki.png)
+![Twoje statystyki](screenshots/5_Twoje_statystyki.png)
 - **Statystyki:** oddzielny widok z agregacją danych użytkownika z ostatnich 4 tygodni.
 
 Modele danych
