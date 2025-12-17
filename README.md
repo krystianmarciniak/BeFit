@@ -81,7 +81,7 @@ dotnet run
 
 5. Aplikacja będzie dostępna pod adresem:
 
-[text](http://localhost:5032/)
+http://localhost:5032
 
 Konto administratora (seed)
 
